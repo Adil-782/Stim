@@ -1,0 +1,117 @@
+/* CSS (styles.css) */
+body {
+    background-color: #0099cc;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.header .logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    color: #0099cc;
+    margin: 10px 0;
+}
+
+.input-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-btn {
+    background-color: #00b3e6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #008bb5;
+}
+
+.additional-links {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.additional-links a {
+    color: #0073a8;
+    text-decoration: none;
+}
+
+.additional-links a:hover {
+    text-decoration: underline;
+}
+.fixed-button {
+    position: fixed; /* Le bouton reste fixe par rapport à la fenêtre */
+    bottom: 20px; /* 20px par rapport au bas de la page */
+    right: 20px; /* 20px par rapport au côté droit de la page */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    background-color: #4CAF50; /* Couleur de fond verte */
+    color: white; /* Couleur du texte en blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bords arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Le curseur devient une main au survol */
+    z-index: 1000; /* Assurez-vous que le bouton est au-dessus des autres éléments */
+}
+
+.fixed-button:hover {
+    background-color: #45a049; /* Couleur de fond plus sombre au survol */
+}
+.solution-button {
+    position: fixed; /* Le bouton reste fixe par rapport à la fenêtre */
+    bottom: 20px; /* 20px par rapport au bas de la page */
+    right: 110px; /* 20px par rapport au côté droit de la page */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    background-color: red; /* Couleur de fond verte */
+    color: white; /* Couleur du texte en blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bords arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Le curseur devient une main au survol */
+    z-index: 1000; /* Assurez-vous que le bouton est au-dessus des autres éléments */
+}
+
+.solution-button:hover {
+    background-color: red; /* Couleur de fond plus sombre au survol */
+}
