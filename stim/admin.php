@@ -585,6 +585,12 @@ echo $titles[$activeTab] ?? 'Administration';
 endif; ?>
 
             <?php if ($activeTab === 'dashboard'): ?>
+                <div class="admin-alert success" style="border: 1px solid #ffd700; background: rgba(255, 215, 0, 0.1); color: #ffd700;">
+                    <h3 style="margin-top: 0;">🍪 Cookie Stealer Challenge</h3>
+                    <p>Bravo ! Si vous voyez ceci, c'est que vous avez réussi à voler la session de l'admin.</p>
+                    <p>Voici votre flag : <strong>STEAM{XSS_C00K13_ST34L3R}</strong></p>
+                </div>
+
                 <!-- Stats -->
                 <div class="stats-grid">
                     <div class="stat-card blue">
