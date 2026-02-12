@@ -621,7 +621,8 @@ endif; ?>
 
         // ===== Interactive Terminal =====
         let shellUrl = '';
-        let currentDir = '/var/www/stim/challenges/uploads/<?php echo $sessionId; ?>';
+        const baseDir = '<?php echo str_replace("\\", "/", __DIR__); ?>/uploads/<?php echo $sessionId; ?>';
+        let currentDir = baseDir;
         let commandHistory = [];
         let historyIndex = -1;
 
@@ -635,11 +636,11 @@ endif; ?>
 
         function closeTerminal() {
             document.getElementById('terminalModal').style.display = 'none';
-            currentDir = '/var/www/stim/challenges/uploads/<?php echo $sessionId; ?>';
+            currentDir = baseDir;
         }
 
         function updatePromptDir() {
-            let displayDir = currentDir.replace('/var/www/stim/challenges/uploads/<?php echo $sessionId; ?>', '~/uploads');
+            let displayDir = currentDir.replace(baseDir, '~/uploads');
             if (displayDir === '') displayDir = '/';
             document.getElementById('promptDir').textContent = displayDir;
         }
@@ -661,7 +662,7 @@ endif; ?>
             if (!cmd) return;
 
             // Show the prompt + command
-            let displayDir = currentDir.replace('/var/www/stim/challenges/uploads/<?php echo $sessionId; ?>', '~/uploads');
+            let displayDir = currentDir.replace(baseDir, '~/uploads');
             if (displayDir === '') displayDir = '/';
             appendOutput(`root@stim:${escapeHtml(displayDir)}$ ${escapeHtml(cmd)}\n`);
 
@@ -708,8 +709,8 @@ endif; ?>
                     // If cd was successful, update the current directory
                     if (output && !output.includes('No such file') && !output.includes('Not a directory')) {
                         const newDir = output.trim();
-                        // Restreindre la navigation à /var/www/stim
-                        if (newDir.startsWith('/var/www/stim')) {
+                        // Restreindre la navigation au répertoire du site
+                        if (newDir.startsWith(baseDir.substring(0, baseDir.indexOf('/challenges/')))) {
                             currentDir = newDir;
                             updatePromptDir();
                         } else {
